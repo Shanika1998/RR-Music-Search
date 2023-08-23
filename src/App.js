@@ -16,9 +16,11 @@ function App() {
     useEffect(() => {
         if(search) {
             const fetchData = async () => {
+                console.log('Hello there')
                 document.title = `${search} Music`
                 const response = await fetch(API_URL + search)
                 const resData = await response.json()
+                console.log(resData)
                 if (resData.results.length > 0) {
                     return setData(resData.results)
                 } else {
